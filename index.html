@@ -42,13 +42,140 @@
     <title>Hello, world!</title>
   </head>
   <body class="animate__animated animate__fadeIn">
-    <div class="container">
-      <header id="header" class=""></header>
+    <main id="main" class="container">
+      <h1 class="display-4 text-white border-bottom">Team Generator</h1>
+      <section
+        class="row border-bottom pb-3 justify-content-between"
+        id="teamFormerSection"
+      >
+        <!-- per aggiungere la lista -->
+        <div class="col-12 col-sm-6">
+          <form>
+            <!-- text area -->
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1" class="text-white"
+                >Add your list</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+            </div>
+            <!-- selezione numero gruppi -->
+            <div class="form-group">
+              <label for="exampleFormControlSelect1"
+                >select number of teams</label
+              >
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+            </div>
+            <!-- bottone -->
+            <button
+              type="submit"
+              class="btn btn-block btn-outline-light backdrop-blur"
+            >
+              Add list
+            </button>
+          </form>
+        </div>
+        <!-- per mostrare la lista -->
+        <div class="col-12 col-sm-6" id="showcaseList">
+          <ul class="list-group">
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+            <li class="list-group-item">And a fifth one</li>
+            <li class="list-group-item">And a fifth one</li>
+            <li class="list-group-item">And a fifth one</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+      </section>
 
-      <main id="main" class=""></main>
+      <!-- Bottoni -->
+      <section class="border-bottom mb-2 py-3 text-center" id="controlsSection">
+        <button type="button" class="btn btn-primary" id="assignBtn">
+          Assign
+        </button>
+        <button type="button" class="btn btn-secondary" id="resetBtn">
+          Reset
+        </button>
+      </section>
 
-      <footer id="footer" class=""></footer>
-    </div>
+      <!-- gruppi random -->
+      <section class="row border-bottom" id="teamsSection">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          <h4 class="group-number">Group - 1</h4>
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          <h4>Group - 1</h4>
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          <h4>Group - 1</h4>
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          <h4>Group - 1</h4>
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          <h4>Group - 1</h4>
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          <h4>Group - 1</h4>
+          <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class=""></footer>
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
