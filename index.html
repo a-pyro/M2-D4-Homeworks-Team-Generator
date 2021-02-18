@@ -46,28 +46,22 @@
       <h1 class="display-4 text-white border-bottom">Team Generator</h1>
       <section
         class="row border-bottom pb-3 justify-content-between"
-        id="teamFormerSection"
+        id="addListSection"
       >
         <!-- per aggiungere la lista -->
-        <div class="col-12 col-sm-6">
+        <div class="col-12" id="formCol">
           <form>
             <!-- text area -->
             <div class="form-group">
-              <label for="exampleFormControlTextarea1" class="text-white"
-                >Add your list</label
+              <label for="textArea" class="text-white"
+                >Add comma separated list of names</label
               >
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-              ></textarea>
+              <textarea class="form-control" id="textArea" rows="3"></textarea>
             </div>
             <!-- selezione numero gruppi -->
             <div class="form-group">
-              <label for="exampleFormControlSelect1"
-                >select number of teams</label
-              >
-              <select class="form-control" id="exampleFormControlSelect1">
+              <label for="selectNumGroups">select number of teams</label>
+              <select class="form-control" id="selectNumGroups">
                 <option>2</option>
                 <option>3</option>
                 <option>4</option>
@@ -79,23 +73,15 @@
             <button
               type="submit"
               class="btn btn-block btn-outline-light backdrop-blur"
+              id="addBtn"
             >
               Add list
             </button>
           </form>
         </div>
         <!-- per mostrare la lista -->
-        <div class="col-12 col-sm-6" id="showcaseList">
-          <ul class="list-group">
-            <li class="list-group-item">A second item</li>
-            <li class="list-group-item">A third item</li>
-            <li class="list-group-item">A fourth item</li>
-            <li class="list-group-item">And a fifth one</li>
-            <li class="list-group-item">And a fifth one</li>
-            <li class="list-group-item">And a fifth one</li>
-            <li class="list-group-item">And a fifth one</li>
-            <li class="list-group-item">And a fifth one</li>
-          </ul>
+        <div class="col-12 col-sm-6 d-none" id="showcaseList">
+          <ul class="list-group"></ul>
         </div>
       </section>
 
