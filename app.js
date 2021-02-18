@@ -15,6 +15,8 @@ let userList = [
     'mettiamo anche una donna',
   ],
   groups = [[], [], [], []];
+// let userList = [],
+// groups = [];
 
 // referenze dom
 const textArea = document.getElementById('textArea');
@@ -69,23 +71,74 @@ addBtn.addEventListener('click', (e) => {
 });
 
 assignBtn.addEventListener('click', () => {
-  console.log(shit);
-
+  if (userList.length === 0) {
+    console.log('utenti finiti');
+    return;
+  }
   // ad ogni click shuffle l'array
-  userList.sort((a, b) => 0.5 - Math.random());
+  let i = 0;
+  while (userList.length !== 0) {
+    const randomMember = userList[Math.floor(Math.random() * userList.length)];
+    const groupInTheMatrix = groups[i % groups.length];
+    groupInTheMatrix.push(randomMember);
+
+    userList.splice(userList.indexOf(randomMember), 1);
+    i++;
+  }
+
+  // for (let i = 0; i < userList.length; i++) {
+  //   const randomMember = userList[Math.floor(Math.random() * userList.length)];
+  //   const groupInTheMatrix = groups[i % groups.length];
+  //   groupInTheMatrix.push(randomMember);
+  // }
+  // const randomMember = userList[Math.floor(Math.random() * userList.length)];
+
+  // userList.sort((a, b) => 0.5 - Math.random());
 
   // cerca il gruppo con meno membri nella matrice
   // const lessPopulatedGroup = groups.reduce((acc, cv) => {});
 
   //cerco il gruppo meno popolato
 
-  groups.sort((a, b) => {
-    if (a.length <= b.length) return -1;
-  });
+  // groups.sort((a, b) => {
+  //   if (a.length <= b.length) return -1;
+  // });
+
+  // groups[0].push(userList[0]);
 
   // lessPopulatedGroup.push(userList[0]);
   console.table(groups);
-  // console.log(userList, groups);
+
+  if (userList.length === 0) {
+    //render
+    console.log('time to render');
+  }
 
   //assign prende dalla memoria un untente a caso e lo mette nella lista che ha meno utenti
+  //per ogni gruppo nei gruppi genera una lista e riempila
+  for (let i = 0; i < groups.length; i++) {
+    const firstGroup = groups[i];
+    if (teamsSection.children.length === 0) {
+      groups.forEach((_, idx) => {
+        const colUL = `
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3">
+          <h4 class="group-number">Group ${idx + 1}</h4>
+          <ul class="list-group" id="list-${idx + 1}">
+          </ul>
+      </div>
+    `;
+        teamsSection.innerHTML += colUL;
+      });
+    }
+
+    const listDom = document.querySelector(`#list-${i + 1}`);
+    listDom.innerHTML = '';
+    firstGroup.forEach((member, idx) => {
+      const listItem = `
+      <li class='list-group-item'>${member}</li>
+      `;
+      listDom.insertAdjacentHTML('beforeend', listItem);
+    });
+    console.log(shit);
+  }
 });
