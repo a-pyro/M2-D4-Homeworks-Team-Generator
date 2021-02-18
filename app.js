@@ -22,8 +22,9 @@ let userList = [
 const textArea = document.getElementById('textArea');
 const selectNumGroups = document.getElementById('selectNumGroups');
 const addBtn = document.getElementById('addBtn');
-const formCol = document.getElementById('formCol');
+const firstColForm = document.getElementById('firstColForm');
 const showcaseList = document.getElementById('showcaseList');
+const formList = showcaseList.firstElementChild;
 
 const assignBtn = document.getElementById('assignBtn');
 const resetBtn = document.getElementById('resetBtn');
@@ -57,19 +58,19 @@ addBtn.addEventListener('click', (e) => {
 
   //! controllare per non riempire la matrice a caso
   //mostro la colonna della lista
-  formCol.classList.add('col-sm-6');
+  firstColForm.classList.add('col-sm-6');
   showcaseList.classList.remove('d-none');
-
   //render in showcase
   userList.forEach((user) => {
     const listItem = `<li class='list-group-item'>${user}</li>`;
     // console.log(showcaseList.firstElementChild);
-    showcaseList.firstElementChild.insertAdjacentHTML('beforeend', listItem);
+    formList.insertAdjacentHTML('beforeend', listItem);
   });
 
   //! qui per ora ok, da vedere i casi in cui tenta di aggiugere altra roba mentre abbiamo già una lista in corso
 });
 
+function renderShowCase() {}
 assignBtn.addEventListener('click', () => {
   if (userList.length === 0) {
     console.log('utenti finiti');
@@ -86,27 +87,6 @@ assignBtn.addEventListener('click', () => {
     i++;
   }
 
-  // for (let i = 0; i < userList.length; i++) {
-  //   const randomMember = userList[Math.floor(Math.random() * userList.length)];
-  //   const groupInTheMatrix = groups[i % groups.length];
-  //   groupInTheMatrix.push(randomMember);
-  // }
-  // const randomMember = userList[Math.floor(Math.random() * userList.length)];
-
-  // userList.sort((a, b) => 0.5 - Math.random());
-
-  // cerca il gruppo con meno membri nella matrice
-  // const lessPopulatedGroup = groups.reduce((acc, cv) => {});
-
-  //cerco il gruppo meno popolato
-
-  // groups.sort((a, b) => {
-  //   if (a.length <= b.length) return -1;
-  // });
-
-  // groups[0].push(userList[0]);
-
-  // lessPopulatedGroup.push(userList[0]);
   console.table(groups);
 
   if (userList.length === 0) {
@@ -114,7 +94,6 @@ assignBtn.addEventListener('click', () => {
     console.log('time to render');
   }
 
-  //assign prende dalla memoria un untente a caso e lo mette nella lista che ha meno utenti
   //per ogni gruppo nei gruppi genera una lista e riempila
   for (let i = 0; i < groups.length; i++) {
     const firstGroup = groups[i];
@@ -139,6 +118,5 @@ assignBtn.addEventListener('click', () => {
       `;
       listDom.insertAdjacentHTML('beforeend', listItem);
     });
-    console.log(shit);
   }
 });
