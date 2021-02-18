@@ -5,8 +5,16 @@ const shit = '💩',
   poudzo = '👍🏻';
 
 // memoria
-let userList = [],
-  groups = [];
+let userList = [
+    'mario',
+    'ardi',
+    'gianni',
+    'semprinoio',
+    'giorgio',
+    'la fiera della salsiccia',
+    'mettiamo anche una donna',
+  ],
+  groups = [[], [], [], []];
 
 // referenze dom
 const textArea = document.getElementById('textArea');
@@ -62,4 +70,22 @@ addBtn.addEventListener('click', (e) => {
 
 assignBtn.addEventListener('click', () => {
   console.log(shit);
+
+  // ad ogni click shuffle l'array
+  userList.sort((a, b) => 0.5 - Math.random());
+
+  // cerca il gruppo con meno membri nella matrice
+  // const lessPopulatedGroup = groups.reduce((acc, cv) => {});
+
+  //cerco il gruppo meno popolato
+
+  groups.sort((a, b) => {
+    if (a.length <= b.length) return -1;
+  });
+
+  // lessPopulatedGroup.push(userList[0]);
+  console.table(groups);
+  // console.log(userList, groups);
+
+  //assign prende dalla memoria un untente a caso e lo mette nella lista che ha meno utenti
 });
